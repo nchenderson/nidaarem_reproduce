@@ -32,7 +32,7 @@ p <- 1000
 
 #####################################################################
 ## Use 100 simulation replications
-nreps <- 10
+nreps <- 100
 
 ## Setup storage for number of iterations (NI), final objective function
 ## values (Obj), convergence information (Conv), and timing (Time):
@@ -122,9 +122,9 @@ for(j in 1:nreps) {
   print(j)
 }
 
-save(NIDAARAMNI, DAARAMNI, SQNI, RENESTNI, NESTNI, PGDNI, MPENI, NIDAAREMNI, 
-     NIDAARAMObj, DAARAMObj, SQObj, RENESTObj, NESTObj, PGDObj, MPEObj, NIDAAREMObj,
-     NIDAARAMConv, DAARAMConv, SQConv, RENESTConv, NESTConv, PGDConv, MPEConv, NIDAAREMConv, 
-     NIDAARAMTime, DAARAMTime, SQTime, RENESTTime, NESTTime, PGDTime, MPETime, NIDAAREMTime,
-     file="SimulationResults/ConstrainedQPSimResults.RData")
+#save(NIDAARAMNI, DAARAMNI, SQNI, RENESTNI, NESTNI, PGDNI, MPENI, NIDAAREMNI, 
+#     NIDAARAMObj, DAARAMObj, SQObj, RENESTObj, NESTObj, PGDObj, MPEObj, NIDAAREMObj,
+#     NIDAARAMConv, DAARAMConv, SQConv, RENESTConv, NESTConv, PGDConv, MPEConv, NIDAAREMConv, 
+#     NIDAARAMTime, DAARAMTime, SQTime, RENESTTime, NESTTime, PGDTime, MPETime, NIDAAREMTime,
+#     file="SimulationResults/ConstrainedQuadraticProgram/ConstrainedQPSimResults.RData")
 

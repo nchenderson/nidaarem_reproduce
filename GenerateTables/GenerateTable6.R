@@ -1,7 +1,7 @@
 ## Code to Generate the results of the constrained QP simulation study
 
 setwd("~/Documents/nidaarem_reproduce")
-load("SimulationResults/ConstrainedQPSimResults.RData")
+load("SimulationResults/ConstrainedQuadraticProgram/ConstrainedQPSimResults.RData")
 
 
 CQPResultsTable <- matrix(NA, nrow=8, ncol=6)
@@ -77,8 +77,9 @@ CQPResultsTable[8,6] <- mean(NIDAARAMObj)
 
 #save(CQPResultsTable, file="Tables/ConstrQuadProgramSimTable.RData")
 
-## library(xtable)
-## xtable(CQPResultsTable)
+## To generate a table for Latex use the following code:
+library(xtable)
+xtable(CQPResultsTable[rownames(CQPResultsTable)!="MPE",], digits=c(rep(1, 6), 6))
 
 
 
