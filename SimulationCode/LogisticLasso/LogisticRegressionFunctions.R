@@ -12,15 +12,16 @@ NegLogisticObjFn <- function(par, X, Xty, lambda, stplngth) {
   return(ans)
 }
 
+LogisticObj <- function(bbeta, X, y, lambda, stplngth) {
+  X.beta <- as.vector(X%*%bbeta)
+  p.hatm1 <- log1p(exp(X.beta))
+  ans <- (-1)*sum(y*X.beta) + sum(p.hatm1) + lambda*sum(abs(bbeta))
+  return(-ans)
+}
+
 
 LogisticUpdate <- function(par, X, Xty, lambda, stplngth) {
     phat <- expit(X%*%par)
     xnew <- SoftThresh(par + stplngth*(Xty - crossprod(X, phat)), lambda=lambda*stplngth)
     return(xnew)
-}
-
-NegLassoObjFn <- function(bbeta, X, y, lambda, stplngth) {
-  X.beta <- as.vector(X%*%bbeta)
-  ans <- sum((y - X.beta)*(y - X.beta))/2 + lambda*sum(abs(bbeta))
-  return(ans)
 }

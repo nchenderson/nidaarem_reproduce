@@ -12,7 +12,7 @@ source("SimulationCode/LogisticLasso/LogisticRegressionFunctions.R")
 
 ni <- 200000  ## maximum of 200,000 iterations.
 tols <- 1e-7
-n.reps <- 50  ## Run 50 times each with a different random starting value
+n.reps <- 50 ## Run 50 times each with a different random starting value
 
 ## Load madelon data and get responses y and scaled design matrix XX
 data(madelon)
@@ -98,7 +98,7 @@ for(k in 1:n.lambda) {
      NESTNI[k,j] <- ans.nest$fpevals
      PGDNI[k,j] <- ans.pgd$fpevals
      MPENI[k,j] <- ans.mpe$fpevals
-     
+
      DAAREMObj[k,j] <- ans.daarem$value.objfn
      DAARAMObj[k,j] <- ans.daaram$value.objfn
      NIDAAREMObj[k,j] <- ans.nidaarem$value.objfn
@@ -108,7 +108,7 @@ for(k in 1:n.lambda) {
      NESTObj[k,j] <- ans.nest$value.objfn
      PGDObj[k,j] <- ans.pgd$value.objfn
      MPEObj[k,j] <- (-1)*ans.mpe$value.objfn
-     
+
      DAAREMConv[k,j] <- ans.daarem$convergence
      DAARAMConv[k,j] <- ans.daaram$convergence
      NIDAAREMConv[k,j] <- ans.nidaarem$convergence
@@ -118,7 +118,7 @@ for(k in 1:n.lambda) {
      NESTConv[k,j] <- ans.nest$convergence
      PGDConv[k,j] <- ans.pgd$convergence
      MPEConv[k,j] <- ans.mpe$convergence
-     
+
      DAAREMTime[k,j] <- ans.daarem.time[3]
      DAARAMTime[k,j] <- ans.daaram.time[3]
      NIDAAREMTime[k,j] <- ans.nidaarem.time[3]
@@ -128,7 +128,7 @@ for(k in 1:n.lambda) {
      NESTTime[k,j] <- ans.nest.time[3]
      PGDTime[k,j] <- ans.pgd.time[3]
      MPETime[k,j] <- ans.mpe.time[3]
-     
+
      print(c(k,j))
   }
 }
